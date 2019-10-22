@@ -16,7 +16,8 @@ module.exports = (db) => {
   let userCreateControllerCallback = (req, res) => {
     db.user.userCreate(req.body, (err, result) => {
       data = {
-        result: req.body
+        req,
+        result
       }
       res.render('users/create', data);
     });
@@ -55,8 +56,8 @@ module.exports = (db) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
       db.user.userProfile(req.params.id, (err, result) => {
         data = {
-          result: result,
-          ownId: req.cookies.user_id
+          req,
+          result
         }
         res.render('users/show', data);
       });

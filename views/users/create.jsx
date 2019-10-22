@@ -7,13 +7,14 @@ class Create extends React.Component {
     return(
       <Layout>
         <Nav>
+          {this.props.req.cookies.username}
         </Nav>
         <body>
           <h1>Account created</h1>
-          <p>Username: {this.props.result.username} </p>
-          <p>Password: {this.props.result.password}</p>
-          <p>Name: {this.props.result.name}</p>
-          <p>Email: {this.props.result.email}</p>
+          <p>Username: {this.props.req.body.username} </p>
+          <p>Password: {this.props.req.body.password}</p>
+          <p>Name: {this.props.req.body.name}</p>
+          <p>Email: {this.props.req.body.email}</p>
         </body>
       </Layout>
     )

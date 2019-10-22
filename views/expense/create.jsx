@@ -1,4 +1,6 @@
 const React = require('react');
+const Layout = require('../layout');
+const Nav = require('../nav');
 
 class Create extends React.Component {
   render(){
@@ -14,12 +16,15 @@ class Create extends React.Component {
      );
     })
     return(
-      <html>
+      <Layout>
+        <Nav>
+          {this.props.req.cookies.username}
+        </Nav>
         <body>
           <h1>Expense Created</h1>
           {list}
         </body>
-      </html>
+      </Layout>
     )
   }
 }

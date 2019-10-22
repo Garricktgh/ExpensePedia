@@ -8,10 +8,11 @@ class Edit extends React.Component {
     return(
       <Layout>
         <Nav>
+          {this.props.req.cookies.username}
         </Nav>
         <body>
-          <h1>Edit Expense: {this.props.id}</h1>
-          <form action={`/expenses/${this.props.id}?_method=put`} method="POST">
+          <h1>Edit Expense: {this.props.req.params.id}</h1>
+          <form action={`/expenses/${this.props.req.params.id}?_method=put`} method="POST">
             <p>Category</p>
             <input type="text" name="category" defaultValue={this.props.result[0].category}/><br/><br/>
             <p>Date</p>

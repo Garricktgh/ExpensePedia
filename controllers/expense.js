@@ -12,13 +12,14 @@ module.exports = (db) => {
   let expenseIndexControllerCallback = (req, res) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
       db.expense.expenseIndex(req.cookies.user_id, (err, result) => {
-        if (result != null) {
         data = {
-          result: result
+          req,
+          result
         }
+        if (result != null) {
         res.render('expense/index', data);
         } else {
-        res.redirect('expense/new');
+        res.render('expense/new', data);
         }
       });
     } else {
@@ -28,7 +29,10 @@ module.exports = (db) => {
 
   let expenseNewControllerCallback = (req, res) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
-      res.render('expense/new');
+      data = {
+        req
+      }
+      res.render('expense/new', data);
     } else {
       res.redirect('/login');
     }
@@ -38,7 +42,8 @@ module.exports = (db) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
       db.expense.expenseCreate(req.body, req.cookies.user_id, (err, result) => {
         data = {
-          result: result
+          req,
+          result
         }
         res.render('expense/create', data);
       });
@@ -51,7 +56,8 @@ module.exports = (db) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
       db.expense.expenseShow(req.params.id, (err, result) => {
         data = {
-          result: result
+          req,
+          result
         }
         res.render('expense/show', data);
       });
@@ -63,7 +69,10 @@ module.exports = (db) => {
   let expenseDeleteControllerCallback = (req, res) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
       db.expense.expenseDelete(req.params.id, (err, result) => {
-        res.render('expense/delete');
+        data = {
+          req
+        }
+        res.render('expense/delete', data);
       });
     } else {
       res.redirect('/login');
@@ -74,8 +83,8 @@ module.exports = (db) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
       db.expense.expenseEdit(req.params.id, (err, result) => {
         data = {
-          id: req.params.id,
-          result : result
+          req,
+          result
         };
         res.render('expense/edit', data);
       });
@@ -88,8 +97,8 @@ module.exports = (db) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
       db.expense.expenseUpdate(req.body, req.params.id, (err, result) => {
         data = {
-          id: req.params.id,
-          result : result
+          req,
+          result
         };
         res.render('expense/update', data);
       });

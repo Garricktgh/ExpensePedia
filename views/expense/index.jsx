@@ -12,9 +12,17 @@ class Index extends React.Component {
             <p>Date: {expense.date} </p>
             <p>Amount: {expense.amount} </p>
             <p>Message: {expense.message}</p>
-           <form action={`/expenses/${expense.id}?_method=delete`} method="POST">
-            <input type="submit" defaultValue="Delete"/>
-          </form>
+            <form action={`/expenses/${expense.id}`} method="GET">
+              <input type="submit" defaultValue="View"/> 
+            </form>
+            <br/>
+            <form action={`/expenses/${expense.id}/edit`} method="GET">
+              <input type="submit" defaultValue="Edit"/> 
+            </form>
+            <br/>
+            <form action={`/expenses/${expense.id}?_method=delete`} method="POST">
+              <input type="submit" defaultValue="Delete"/>
+            </form>
           <br/><br/><br/><br/>
         </div>
       );
@@ -22,6 +30,7 @@ class Index extends React.Component {
     return (
       <Layout>
         <Nav>
+          {this.props.req.cookies.username}
         </Nav>
         <body>
           <h3>Hello</h3><br/><br/>

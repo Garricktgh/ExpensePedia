@@ -1,0 +1,21 @@
+html, body {
+  color: $color-primary-dark;
+  font-family: $font-family-body;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  @media #{$tablet-only} {
+    font-size: 15px;
+  }
+  @media #{$mobile-landscape-only} {
+    font-size: 14px;
+  }
+  @media #{$mobile-only} {
+    font-size: 13px;
+  }
+}
+

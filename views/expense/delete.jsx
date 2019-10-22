@@ -1,13 +1,18 @@
-let React = require('react');
+const React = require('react');
+const Layout = require('../layout');
+const Nav = require('../nav');
 
 class Delete extends React.Component {
   render() {
     return(
-      <html>
+      <Layout>
+        <Nav>
+          {this.props.req.cookies.username}
+        </Nav>
         <body>
           <h1>Expense Deleted</h1>
         </body>
-      </html>
+      </Layout>
     );
   }
 }

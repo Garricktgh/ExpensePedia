@@ -7,6 +7,7 @@ class New extends React.Component {
     return(
       <Layout>
         <Nav>
+          {this.props.req.cookies.username}
         </Nav>
         <body>
           <h1>What are you spending on today?</h1>
