@@ -1,9 +1,13 @@
 const React = require('react');
+const Layout = require('../layout');
+const Nav = require('../nav');
 
 class Show extends React.Component {
   render(){
     return(
-      <html>
+      <Layout>
+        <Nav>
+        </Nav>
         <body>
           <h1>Updated: {this.props.id}</h1>
           <p>Category: {this.props.result[0].category}</p>
@@ -14,7 +18,7 @@ class Show extends React.Component {
             <input type="submit" defaultValue="Delete"/>
           </form>
         </body>
-      </html>
+      </Layout>
     )
   }
 }

@@ -1,10 +1,14 @@
 const React = require('react');
+const Layout = require('../layout');
+const Nav = require('../nav');
 
 class New extends React.Component {
   render(){
 
     return(
-      <html>
+      <Layout>
+        <Nav>
+        </Nav>
         <body>
           <h1>Login</h1>
           <form action="/login" method="POST">
@@ -15,7 +19,7 @@ class New extends React.Component {
             <input type="submit" value="Login"/>
           </form>
         </body>
-      </html>
+      </Layout>
     )
   }
 }

@@ -1,9 +1,13 @@
 const React = require('react');
+const Layout = require('../layout');
+const Nav = require('../nav');
 
 class New extends React.Component {
   render(){
     return(
-      <html>
+      <Layout>
+        <Nav>
+        </Nav>
         <body>
           <h1>What are you spending on today?</h1>
           <form action={`/expenses`} method="POST">
@@ -19,7 +23,7 @@ class New extends React.Component {
             <input type="submit" value="Submit expense"/><br/><br/><br/><br/>
           </form>
         </body>
-      </html>
+      </Layout>
     )
   }
 }

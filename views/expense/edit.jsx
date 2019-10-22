@@ -1,9 +1,14 @@
-let React = require('react');
+const React = require('react');
+const Layout = require('../layout');
+const Nav = require('../nav');
+
 
 class Edit extends React.Component {
   render() {
     return(
-      <html>
+      <Layout>
+        <Nav>
+        </Nav>
         <body>
           <h1>Edit Expense: {this.props.id}</h1>
           <form action={`/expenses/${this.props.id}?_method=put`} method="POST">
@@ -18,7 +23,7 @@ class Edit extends React.Component {
             <input type="submit" value="Edit"/>
           </form>
         </body>
-      </html>
+      </Layout>
     );
   }
 }

@@ -1,6 +1,8 @@
-var React = require("react");
+const React = require("react");
+const Layout = require('../layout');
+const Nav = require('../nav');
 
-class Home extends React.Component {
+class Index extends React.Component {
   render() {
     const list = this.props.result.map(expense  => {
       return (
@@ -18,15 +20,16 @@ class Home extends React.Component {
       );
      })
     return (
-      <html>
-        <head />
+      <Layout>
+        <Nav>
+        </Nav>
         <body>
           <h3>Hello</h3><br/><br/>
           {list}
         </body>
-      </html>
+      </Layout>
     );
   }
 }
 
-module.exports = Home;
+module.exports = Index;

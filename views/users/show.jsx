@@ -1,4 +1,6 @@
 const React = require('react');
+const Layout = require('../layout');
+const Nav = require('../nav');
 
 class Show extends React.Component {
   render(){
@@ -23,12 +25,14 @@ class Show extends React.Component {
      );
     })
     return(
-      <html>
+      <Layout>
+        <Nav>
+        </Nav>
         <body>
           <h1>User profile</h1>
           {list}<br/><br/>
         </body>
-      </html>
+      </Layout>
     )
   }
 }

@@ -1,4 +1,6 @@
 var React = require("react");
+const Layout = require('../layout');
+const Nav = require('../nav');
 
 class Home extends React.Component {
   render() {
@@ -18,13 +20,15 @@ class Home extends React.Component {
       );
      })
     return (
-      <html>
+      <Layout>
+        <Nav>
+        </Nav>
         <head />
         <body>
           <h3>Single Expense</h3><br/>
           {list}
         </body>
-      </html>
+      </Layout>
     );
   }
 }
