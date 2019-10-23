@@ -21,7 +21,7 @@ class Nav extends React.Component {
                     <a className="nav-link text-white" href="/expenses/new">New Expense</a>
                 </li>
                 <li className="nav-item">
-                      <a className="nav-link text-white" href="/register">Log Out</a>
+                      <a className="nav-link text-white" href="/logout">Log Out</a>
                   </li>
               </ul>
             </div>

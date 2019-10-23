@@ -26,6 +26,9 @@ module.exports = (app, allModels) => {
   
   app.get('/users/:id',userControllerCallbacks.userProfile);
 
+  app.get('/logout', userControllerCallbacks.userLogout);
+
+
   //expense routes
   app.get('/', expenseControllerCallbacks.expenseindex);
 

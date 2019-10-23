@@ -66,6 +66,13 @@ module.exports = (db) => {
     }
   };
 
+  let userLogoutControllerCallback = (req,res)=>{
+    res.clearCookie('user_id');
+    res.clearCookie('hasLoggedIn');
+    res.clearCookie('username');
+    res.redirect('/login');
+  }
+
 
 
   /**
@@ -78,7 +85,8 @@ module.exports = (db) => {
     userNew : userNewControllerCallback,
     userLogin: userLoginControllerCallback,
     userLoggedIn: userLoggedInControllerCallback,
-    userProfile: userProfileControllerCallback
+    userProfile: userProfileControllerCallback,
+    userLogout: userLogoutControllerCallback
   };
 
 }

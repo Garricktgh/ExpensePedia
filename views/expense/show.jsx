@@ -25,6 +25,7 @@ class Show extends React.Component {
     return (
       <Layout>
         <Nav>
+          {this.props.req.cookies.username}
         </Nav>
         <head />
         <body>
