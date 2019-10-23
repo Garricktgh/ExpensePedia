@@ -71,7 +71,7 @@ module.exports = (db) => {
     res.clearCookie('hasLoggedIn');
     res.clearCookie('username');
     res.redirect('/login');
-  }
+  };
 
 
 

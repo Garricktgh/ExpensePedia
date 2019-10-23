@@ -64,6 +64,10 @@ const allUserModelsFunction = require('./models/user');
 
 const userModelsObject = allUserModelsFunction( pool );
 
+const allStatisticModelsFunction = require('./models/statistic');
+
+const statisticModelsObject = allStatisticModelsFunction( pool );
+
 /*
  * ===================================================
  * ===================================================
@@ -92,4 +96,5 @@ module.exports = {
   // users: userModelsObject,
   expense: expenseModelsObject,
   user: userModelsObject,
+  statistic: statisticModelsObject
 };
