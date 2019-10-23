@@ -1,6 +1,7 @@
 const React = require("react");
 const Layout = require('../layout');
 const Nav = require('../nav');
+const moment = require('moment');
 
 class Index extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class Index extends React.Component {
         <div>
             <p>Expense Id: {expense.id} </p>
             <p>Category: {expense.category} </p>
-            <p>Date: {expense.date} </p>
+            <p>Date: {moment(expense.date).format('ll')} </p>
             <p>Amount: {expense.amount} </p>
             <p>Message: {expense.message}</p>
             <form action={`/expenses/${expense.id}`} method="GET">

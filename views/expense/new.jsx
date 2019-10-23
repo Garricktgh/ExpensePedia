@@ -13,9 +13,18 @@ class New extends React.Component {
           <h1>What are you spending on today?</h1>
           <form action={`/expenses`} method="POST">
             <p>Category</p>
-            <input type="text" name="category"/><br/><br/>
+            <select type="text" name="category">
+              <option value="Entertainment">Entertainment</option>
+              <option value="Transport">Transport</option>
+              <option value="Food">Food</option>
+              <option value="Drinks">Drinks</option>
+              <option value="Ultilities">Ultitilies</option>
+              <option value="Clothes">Clothes</option>
+              <option value="Others">Others</option>
+            </select>
+            <br/><br/>
             <p>Date</p>
-            <input type="text" name="date"/><br/><br/>
+            <input type="date" name="date"/><br/><br/>
             <p>Amount</p>
             <input type="text" name="amount"/><br/><br/>
             <p>Message</p>

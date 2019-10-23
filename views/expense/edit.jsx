@@ -2,7 +2,6 @@ const React = require('react');
 const Layout = require('../layout');
 const Nav = require('../nav');
 
-
 class Edit extends React.Component {
   render() {
     return(
@@ -14,9 +13,17 @@ class Edit extends React.Component {
           <h1>Edit Expense: {this.props.req.params.id}</h1>
           <form action={`/expenses/${this.props.req.params.id}?_method=put`} method="POST">
             <p>Category</p>
-            <input type="text" name="category" defaultValue={this.props.result[0].category}/><br/><br/>
+            <select type="text" name="category" defaultValue={this.props.result[0].category}>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Transport">Transport</option>
+              <option value="Food">Food</option>
+              <option value="Drinks">Drinks</option>
+              <option value="Ultilities">Ultitilies</option>
+              <option value="Clothes">Clothes</option>
+              <option value="Others">Others</option>
+            </select><br/><br/>
             <p>Date</p>
-            <input type="text" name="date" defaultValue={this.props.result[0].date}/><br/><br/>
+            <input type="date" name="date" defaultValue={this.props.result[0].date}/><br/><br/>
             <p>Amount</p>
             <input type="text" name="amount" defaultValue={this.props.result[0].amount}/><br/><br/>
             <p>Message</p>

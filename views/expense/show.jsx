@@ -1,6 +1,7 @@
 const React = require("react");
 const Layout = require('../layout');
 const Nav = require('../nav');
+const moment = require('moment');
 
 class Show extends React.Component {
   render() {
@@ -9,10 +10,10 @@ class Show extends React.Component {
         <div>
           <p>Expense Id: {expense.id} </p>
           <p>Category: {expense.category} </p>
-          <p>Date: {expense.date} </p>
+          <p>Date: {moment(expense.date).format('ll')} </p>
           <p>Amount: {expense.amount} </p>
           <p>Message: {expense.message}</p><br/><br/>
-          <form action={`/expenses/${this.props.id}`} method="GET">
+          <form action={`/expenses/${expense.id}/edit`} method="GET">
             <input type="submit" defaultValue="Edit"/>
           </form>
           <br/>
