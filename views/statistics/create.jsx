@@ -5,18 +5,19 @@ const moment = require('moment');
 
 class Create extends React.Component {
   render(){
-    console.log("view", this.props.req.body);
+    let data = [];
     let total_expense = this.props.result2.rows[0].sum;
     const list = this.props.result.map (expense => {
       let percent = parseInt(expense.cat_expense) / parseInt(total_expense) * 100;
+      data.push({category : expense.category, percent : percent.toFixed(2)})
+      console.log(data);
       return (
         <div>
-          <p>{expense.category} Expenses: ${expense.cat_expense} ({percent.toFixed(2)}%)</p>
+          <p>{expense.category}: ${expense.cat_expense} ({percent.toFixed(2)}%)</p>
         </div>
       )
-    }); 
-    console.log("view", this.props.result[0]);
-    console.log("view", this.props.result2.rows);
+    });
+    data = JSON.stringify(data); 
     return(
       <Layout>
         <Nav>
@@ -28,6 +29,11 @@ class Create extends React.Component {
           <p>End Date: {moment(this.props.req.body.end_date).format('ll')}</p>
           {list}
           <p>Total Expenses: ${this.props.result2.rows[0].sum}</p>
+          <div>
+            <canvas id="myChart"  width="400" height="400"></canvas>
+          </div>
+          <script dangerouslySetInnerHTML={ {__html: `let cData = ${data}`}}/>
+          <script src="/script.js"></script>
         </body>
       </Layout>
     )

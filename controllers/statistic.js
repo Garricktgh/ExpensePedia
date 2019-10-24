@@ -11,7 +11,10 @@ module.exports = (db) => {
 
   let statisticNewControllerCallback = (req, res) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
-      res.render('statistics/new');
+      data = {
+        req
+      }
+      res.render('statistics/new', data);
     } else {
       res.render('/login');
     }
@@ -25,15 +28,12 @@ module.exports = (db) => {
             req,
             result,
             result2
-          }
-          console.log("result",result);
-          console.log("test", req.body)
-          console.log("total expense", result2);        
+          }     
           res.render('statistics/create', data);
        });
       });
     } else {
-      res.render('user/login');
+      res.render('/login');
     }
   };
 

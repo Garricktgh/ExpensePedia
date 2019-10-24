@@ -54,7 +54,7 @@ module.exports = (db) => {
 
   let userProfileControllerCallback = (req, res) => {
     if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
-      db.user.userProfile(req.params.id, (err, result) => {
+      db.user.userProfile(req.cookies.user_id, (err, result) => {
         data = {
           req,
           result

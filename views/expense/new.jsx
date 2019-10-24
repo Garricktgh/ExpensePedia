@@ -30,7 +30,7 @@ class New extends React.Component {
             <p>Message</p>
             <input type="text" name="message"/><br/><br/>
             <input type="hidden" name="user_id" defaultValue={this.props.id}/>
-            <input type="submit" value="Submit expense"/><br/><br/><br/><br/>
+            <input class="btn btn-primary" type="submit" value="Submit expense"/><br/><br/><br/><br/>
           </form>
         </body>
       </Layout>

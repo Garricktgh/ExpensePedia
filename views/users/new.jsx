@@ -20,7 +20,7 @@ class New extends React.Component {
             <input type="text" name="name"/><br/><br/>
             <p>Email</p>
             <input type="text" name="email"/><br/><br/>
-            <input type="submit" value="create account"/>
+            <input class="btn btn-primary" type="submit" value="create account"/>
           </form>
         </body>
       </Layout>

@@ -16,7 +16,7 @@ class New extends React.Component {
             <input type="text" name="username"/><br/><br/>
             <p>Password</p>
             <input type="text" name="password"/><br/><br/>
-            <input type="submit" value="Login"/>
+            <input class="btn btn-primary" type="submit" value="Login"/>
           </form>
         </body>
       </Layout>

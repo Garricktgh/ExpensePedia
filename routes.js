@@ -21,7 +21,7 @@ module.exports = (app, allModels) => {
   app.post('/register', userControllerCallbacks.userCreate);
   app.get('/login', userControllerCallbacks.userLogin);
   app.post('/login', userControllerCallbacks.userLoggedIn);
-  app.get('/users/:id',userControllerCallbacks.userProfile);
+  app.get('/users/profile',userControllerCallbacks.userProfile);
   app.get('/logout', userControllerCallbacks.userLogout);
 
   //expense routes

@@ -28,7 +28,7 @@ class Edit extends React.Component {
             <input type="text" name="amount" defaultValue={this.props.result[0].amount}/><br/><br/>
             <p>Message</p>
             <input type="text" name="message" defaultValue={this.props.result[0].message}/><br/><br/>
-            <input type="submit" value="Edit"/>
+            <input class="btn btn-primary" type="submit" value="Edit"/>
           </form>
         </body>
       </Layout>

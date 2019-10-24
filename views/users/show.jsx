@@ -7,7 +7,6 @@ class Show extends React.Component {
     const list = this.props.result.map(user  => {
      return (
        <div>
-        <p>Id: {user.id}</p>
         <p>Username: {user.username}</p>
         <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
