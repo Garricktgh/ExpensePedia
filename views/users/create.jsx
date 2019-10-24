@@ -1,14 +1,13 @@
 const React = require('react');
 const Layout = require('../layout');
-const Nav = require('../nav');
+const NavLogin= require('../nav-login');
 
 class Create extends React.Component {
   render(){
     return(
       <Layout>
-        <Nav>
-          {this.props.req.cookies.username}
-        </Nav>
+        <NavLogin>
+        </NavLogin>
         <body>
           <h1>Account created</h1>
           <p>Username: {this.props.req.body.username} </p>

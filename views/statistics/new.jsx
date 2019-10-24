@@ -17,7 +17,7 @@ class New extends React.Component {
             <input type="date" name="start_date"/><br/><br/>
             <p>End Date:</p>
             <input type="date" name="end_date"/><br/><br/>
-            <input class="btn btn-primary" type="submit" value="Generate Expense Statistics"/>
+            <input class="btn btn-dark" type="submit" value="Generate Expense Statistics"/>
           </form>
         </body>
       </Layout>

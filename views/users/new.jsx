@@ -1,14 +1,14 @@
 const React = require('react');
 const Layout = require('../layout');
-const Nav = require('../nav');
+const NavLogin = require('../nav-login');
 
 class New extends React.Component {
   render(){
 
     return(
       <Layout>
-        <Nav>
-        </Nav>
+        <NavLogin>
+        </NavLogin>
         <body>
           <h1>Register</h1>
           <form action="/register" method="POST">
@@ -20,7 +20,7 @@ class New extends React.Component {
             <input type="text" name="name"/><br/><br/>
             <p>Email</p>
             <input type="text" name="email"/><br/><br/>
-            <input class="btn btn-primary" type="submit" value="create account"/>
+            <input class="btn btn-dark" type="submit" value="create account"/>
           </form>
         </body>
       </Layout>
