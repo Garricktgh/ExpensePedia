@@ -8,7 +8,8 @@ class Create extends React.Component {
     let data = [];
     let total_expense = this.props.result2.rows[0].sum;
     const list = this.props.result.map (expense => {
-      let percent = parseInt(expense.cat_expense) / parseInt(total_expense) * 100;
+      console.log
+      let percent = parseFloat(expense.cat_expense) / parseFloat(total_expense) * 100;
       data.push({category : expense.category, percent : percent.toFixed(2)})
       console.log(data);
       return (
