@@ -18,11 +18,10 @@ class Show extends React.Component {
             <p>Amount: {this.props.result[0].amount}</p>
             <p>Message: {this.props.result[0].message}</p>
             <form action={`/expenses/${this.props.req.params.id}/edit`} method="GET">
-              <input type="submit" defaultValue="Edit"/>
+              <input  class="btn btn-secondary" type="submit" defaultValue="Edit"/>
             </form>
-            <br/>
             <form action={`/expenses/${this.props.req.params.id}?_method=delete`} method="POST">
-              <input type="submit" defaultValue="Delete"/>
+              <input  class="btn btn-secondary" type="submit" defaultValue="Delete"/>
             </form>
           </div>
         </body>
