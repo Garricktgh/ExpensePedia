@@ -22,7 +22,7 @@ class Nav extends React.Component {
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Signed in as  {personalised}</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/users/profile">User Profile</a>
+                  <a class="dropdown-item" href="/users/profile">Your Profile</a>
                   <a class="dropdown-item" href="#">Edit Profile</a>
                   <a class="dropdown-item" href="/logout">Logout</a>
                 </div>

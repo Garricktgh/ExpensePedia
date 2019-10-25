@@ -19,8 +19,10 @@ class Show extends React.Component {
           {this.props.req.cookies.username}
         </Nav>
         <body>
-          <h1>User profile</h1>
-          {list}<br/><br/>
+          <h1>Your profile</h1>
+          <div className="card text-white bg-dark mb-3">
+            {list}
+          </div>
         </body>
       </Layout>
     )

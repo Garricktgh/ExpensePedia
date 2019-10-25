@@ -1,6 +1,5 @@
 let canvas = document.getElementById('myChart');
 let ctx = canvas.getContext('2d');
-console.log(cData);
 
 let fillLabels = [];
 let fillData = [];
@@ -18,6 +17,7 @@ let myChart = new Chart(ctx, {
           label: 'Expense Summary',
           data: fillData,
           backgroundColor: [
+              'rgba(65, 68, 246, 0.2)',
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
               'rgba(255, 206, 86, 0.2)',
@@ -26,6 +26,7 @@ let myChart = new Chart(ctx, {
               'rgba(255, 159, 64, 0.2)'
           ],
           borderColor: [
+              'rgba(65, 68, 246, 1)',
               'rgba(255, 99, 132, 1)',
               'rgba(54, 162, 235, 1)',
               'rgba(255, 206, 86, 1)',

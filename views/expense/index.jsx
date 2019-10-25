@@ -7,24 +7,22 @@ class Index extends React.Component {
   render() {
     const list = this.props.result.map(expense  => {
       return (
-        <div>
-            <p>Expense Id: {expense.id} </p>
-            <p>Category: {expense.category} </p>
-            <p>Date: {moment(expense.date).format('ll')} </p>
-            <p>Amount: {expense.amount} </p>
-            <p>Message: {expense.message}</p>
-            <form action={`/expenses/${expense.id}`} method="GET">
-              <input class="btn btn-dark" type="submit" defaultValue="View"/> 
-            </form>
-            <br/>
-            <form action={`/expenses/${expense.id}/edit`} method="GET">
-              <input class="btn btn-dark" type="submit" defaultValue="Edit"/> 
-            </form>
-            <br/>
-            <form action={`/expenses/${expense.id}?_method=delete`} method="POST">
-              <input class="btn btn-dark" type="submit" defaultValue="Delete"/>
-            </form>
-          <br/><br/><br/><br/>
+        <div className="card text-white bg-dark mb-3">
+          <br/>
+          <p>Category: {expense.category} </p>
+          <p>Date: {moment(expense.date).format('ll')} </p>
+          <p>Amount: {expense.amount} </p>
+          <p>Message: {expense.message}</p>
+          <form action={`/expenses/${expense.id}`} method="GET">
+            <input class="btn btn-secondary" type="submit" defaultValue="View"/> 
+          </form>
+          <form action={`/expenses/${expense.id}/edit`} method="GET">
+            <input class="btn btn-secondary" type="submit" defaultValue="Edit"/> 
+          </form>
+          <form action={`/expenses/${expense.id}?_method=delete`} method="POST">
+            <input class="btn btn-secondary" type="submit" defaultValue="Delete"/>
+          </form>
+          <br/><br/>
         </div>
       );
      })
@@ -34,7 +32,7 @@ class Index extends React.Component {
           {this.props.req.cookies.username}
         </Nav>
         <body>
-          <h3>Hello</h3><br/><br/>
+          <h1>Hello {this.props.req.cookies.username}</h1>
           {list}
         </body>
       </Layout>

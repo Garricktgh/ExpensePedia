@@ -12,13 +12,15 @@ class New extends React.Component {
         </Nav>
         <body>
           <h1>Pick Time Period</h1>
-          <form action="/statistics/create" method="POST">
-            <p>Start Date:</p>
-            <input type="date" name="start_date"/><br/><br/>
-            <p>End Date:</p>
-            <input type="date" name="end_date"/><br/><br/>
-            <input class="btn btn-dark" type="submit" value="Generate Expense Statistics"/>
-          </form>
+          <div className="card text-white bg-dark mb-3">
+            <form action="/statistics/create" method="POST">
+              <p>Start Date:</p>
+              <input type="date" name="start_date"/><br/><br/>
+              <p>End Date:</p>
+              <input type="date" name="end_date"/><br/><br/>
+              <input class="btn btn-secondary" type="submit" value="Generate Expense Statistics"/>
+            </form>
+          </div>
         </body>
       </Layout>
     )

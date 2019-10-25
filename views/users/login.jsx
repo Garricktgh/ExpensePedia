@@ -11,13 +11,15 @@ class New extends React.Component {
         </NavLogin>
         <body>
           <h1>Login</h1>
-          <form action="/login" method="POST">
-            <p>Username</p>
-            <input type="text" name="username"/><br/><br/>
-            <p>Password</p>
-            <input type="text" name="password"/><br/><br/>
-            <input class="btn btn-dark" type="submit" value="Login"/>
-          </form>
+          <div className="card text-white bg-dark mb-3">
+            <form action="/login" method="POST">
+              <p>Username</p>
+              <input type="text" name="username"/><br/><br/>
+              <p>Password</p>
+              <input type="text" name="password"/><br/><br/>
+              <input class="btn btn-secondary" type="submit" value="Login"/>
+            </form>
+          </div>
         </body>
       </Layout>
     )

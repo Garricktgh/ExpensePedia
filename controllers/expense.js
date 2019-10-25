@@ -45,7 +45,6 @@ module.exports = (db) => {
           req,
           result
         }
-        console.log(result);
         res.render('expense/create', data);
       });
     } else {

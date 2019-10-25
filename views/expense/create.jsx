@@ -8,7 +8,6 @@ class Create extends React.Component {
     const list = this.props.result.map(expense  => {
      return (
        <div>
-          <p>Id: {expense.id} </p>
           <p>Category: {expense.category} </p>
           <p>Date: {moment(expense.date).format('ll')} </p>
           <p>Amount: {expense.amount} </p>
@@ -23,7 +22,9 @@ class Create extends React.Component {
         </Nav>
         <body>
           <h1>Expense Created</h1>
-          {list}
+          <div className="card text-white bg-dark mb-3">
+            {list}
+          </div>
         </body>
       </Layout>
     )

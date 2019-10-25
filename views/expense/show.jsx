@@ -7,18 +7,16 @@ class Show extends React.Component {
   render() {
     const list = this.props.result.map(expense  => {
       return (
-        <div>
-          <p>Expense Id: {expense.id} </p>
+        <div className="card ">
           <p>Category: {expense.category} </p>
           <p>Date: {moment(expense.date).format('ll')} </p>
           <p>Amount: {expense.amount} </p>
           <p>Message: {expense.message}</p><br/><br/>
           <form action={`/expenses/${expense.id}/edit`} method="GET">
-            <input class="btn btn-dark" type="submit" defaultValue="Edit"/>
+            <input class="btn btn-secondary" type="submit" defaultValue="Edit"/>
           </form>
-          <br/>
           <form action={`/expenses/${expense.id}?_method=delete`} method="POST">
-            <input class="btn btn-dark" type="submit" defaultValue="Delete"/>
+            <input class="btn btn-secondary" type="submit" defaultValue="Delete"/>
           </form>
         </div>
       );
@@ -30,7 +28,7 @@ class Show extends React.Component {
         </Nav>
         <head />
         <body>
-          <h3>Single Expense</h3><br/>
+          <h1>Single Expense</h1>
           {list}
         </body>
       </Layout>

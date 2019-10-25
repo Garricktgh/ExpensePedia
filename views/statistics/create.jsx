@@ -8,14 +8,13 @@ class Create extends React.Component {
     let data = [];
     let total_expense = this.props.result2.rows[0].sum;
     const list = this.props.result.map (expense => {
-      console.log
       let percent = parseFloat(expense.cat_expense) / parseFloat(total_expense) * 100;
       data.push({category : expense.category, percent : percent.toFixed(2)})
-      console.log(data);
       return (
-        <div>
-          <p>{expense.category}: ${expense.cat_expense} ({percent.toFixed(2)}%)</p>
-        </div>
+        <tr>
+          <th scope="col">{expense.category}:</th>
+          <td scope="col">${expense.cat_expense}</td>
+        </tr>
       )
     });
     data = JSON.stringify(data); 
@@ -25,13 +24,29 @@ class Create extends React.Component {
           {this.props.req.cookies.username}
         </Nav>
         <body>
-          <h1>Expenses Summary: </h1>
-          <p>Start Date: {moment(this.props.req.body.start_date).format('ll')}</p>
-          <p>End Date: {moment(this.props.req.body.end_date).format('ll')}</p>
-          {list}
-          <p>Total Expenses: ${this.props.result2.rows[0].sum}</p>
-          <div>
-            <canvas id="myChart"  width-max="200" height-max="200"></canvas>
+          <div className="row col-12 myStat">
+            <div className="col-2"></div>
+            <div className="card text-white bg-dark mb-3 col-4">
+              <h1>Expenses Summary</h1><br/>
+              <table class="table table-dark text-white">
+                <tr>
+                  <th scope="col">Start Date:</th>
+                  <td scope="col">{moment(this.props.req.body.start_date).format('ll')}</td>
+                </tr>
+                <tr>
+                  <th scope="col">End Date:</th>
+                  <td scope="col">{moment(this.props.req.body.end_date).format('ll')}</td>
+                </tr>
+                {list}
+                <tr>
+                  <th scope="col">Total Expenses:</th>
+                  <td scope="col">${this.props.result2.rows[0].sum}</td>
+                </tr>
+              </table>
+            </div>
+            <div id="chartContainer" className="col-5">
+              <canvas id="myChart"  width="600" height="600"></canvas>
+            </div>
           </div>
           <script dangerouslySetInnerHTML={ {__html: `let cData = ${data}`}}/>
           <script src="/script.js"></script>
