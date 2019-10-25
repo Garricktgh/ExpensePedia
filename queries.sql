@@ -1,1 +1,0 @@
-SELECT sum(total_expense.filler) FROM (SELECT category, sum(amount) AS filler FROM expenses WHERE user_id = 3 AND date BETWEEN '2019-10-08' AND '2019-10-21' GROUP BY category) AS total_expense;

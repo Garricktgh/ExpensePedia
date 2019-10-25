@@ -10,7 +10,7 @@ class Edit extends React.Component {
           {this.props.req.cookies.username}
         </Nav>
         <body>
-          <h1>Edit Expense:</h1>
+          <h1>Edit Expense</h1>
           <div className="card text-white bg-dark mb-3">
             <form action={`/expenses/${this.props.req.params.id}?_method=put`} method="POST">
               <p>Category</p>
@@ -29,7 +29,7 @@ class Edit extends React.Component {
               <input type="text" name="amount" defaultValue={this.props.result[0].amount}/><br/><br/>
               <p>Message</p>
               <input type="text" name="message" defaultValue={this.props.result[0].message}/><br/><br/>
-              <input class="btn btn-secondary" type="submit" value="Edit"/>
+              <input class="btn btn-secondary" type="submit" value="Submit"/>
             </form>
           </div>
         </body>

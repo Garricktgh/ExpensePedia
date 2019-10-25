@@ -31,7 +31,7 @@ class New extends React.Component {
               <p>Message</p>
               <input type="text" name="message"/><br/><br/>
               <input type="hidden" name="user_id" defaultValue={this.props.id}/>
-              <input class="btn btn-secondary" type="submit" value="Submit expense"/><br/>
+              <input class="btn btn-secondary" type="submit" value="Submit"/><br/>
             </form>
           </div>
         </body>

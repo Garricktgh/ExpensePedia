@@ -28,15 +28,8 @@ class Create extends React.Component {
             <div className="col-2"></div>
             <div className="card text-white bg-dark mb-3 col-4">
               <h1>Expenses Summary</h1><br/>
+              <p>From <b>{moment(this.props.req.body.start_date).format('ll')}</b> to <b>{moment(this.props.req.body.end_date).format('ll')}</b></p>
               <table class="table table-dark text-white">
-                <tr>
-                  <th scope="col">Start Date:</th>
-                  <td scope="col">{moment(this.props.req.body.start_date).format('ll')}</td>
-                </tr>
-                <tr>
-                  <th scope="col">End Date:</th>
-                  <td scope="col">{moment(this.props.req.body.end_date).format('ll')}</td>
-                </tr>
                 {list}
                 <tr>
                   <th scope="col">Total Expenses:</th>

@@ -37,7 +37,6 @@ module.exports = (db) => {
           if (hashedPassword === result.rows[0].password) {
             let user_id = result.rows[0].id;
             let hashedCookie = sha256(user_id + salt);
-  
             res.cookie('user_id', user_id);
             res.cookie('hasLoggedIn', hashedCookie);
             res.cookie('username', req.body.username);

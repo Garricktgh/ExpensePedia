@@ -7,16 +7,16 @@ class Show extends React.Component {
   render() {
     const list = this.props.result.map(expense  => {
       return (
-        <div className="card ">
+        <div className="card text-white bg-dark mb-3">
           <p>Category: {expense.category} </p>
           <p>Date: {moment(expense.date).format('ll')} </p>
           <p>Amount: {expense.amount} </p>
-          <p>Message: {expense.message}</p><br/><br/>
-          <form action={`/expenses/${expense.id}/edit`} method="GET">
-            <input class="btn btn-secondary" type="submit" defaultValue="Edit"/>
+          <p>Message: {expense.message}</p>
+          <form action={`/expenses/${expense.id}/edit`} method="GET" id="edit">
+            <button class='bx bxs-edit' type="submit" form="edit"></button>
           </form>
-          <form action={`/expenses/${expense.id}?_method=delete`} method="POST">
-            <input class="btn btn-secondary" type="submit" defaultValue="Delete"/>
+          <form action={`/expenses/${expense.id}?_method=delete`} method="POST" id="delete">
+            <button class="bx bxs-trash" type="submit" form="delete"/>
           </form>
         </div>
       );
