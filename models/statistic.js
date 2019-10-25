@@ -1,5 +1,5 @@
 const sha256 = require('js-sha256');
-const salt = 'expediasalt';
+const salt = process.env.SALT;
 
 /**
  * ===========================================
