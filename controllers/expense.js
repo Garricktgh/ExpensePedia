@@ -107,19 +107,34 @@ module.exports = (db) => {
     }
   };
 
+  let expenseSortControllerCallback = (req, res) => {
+    if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
+      db.expense.expenseSort(req.cookies.user_id, req.body, (err, result) => {
+        data = {
+          req,
+          result
+        };
+        res.render('expense/indexSort', data);
+      });
+    } else {
+      res.redirect('/login');
+    }
+  };
+
   /**
    * ===========================================
    * Export controller functions as a module
    * ===========================================
    */
   return {
-    expenseindex: expenseIndexControllerCallback,
+    expenseIndex: expenseIndexControllerCallback,
     expenseNew: expenseNewControllerCallback,
     expenseCreate: expenseCreateControllerCallback,
     expenseShow: expenseShowControllerCallback,
     expenseDelete: expenseDeleteControllerCallback,
     expenseEdit: expenseEditControllerCallback,
-    expenseUpdate: expenseUpdateControllerCallback
+    expenseUpdate: expenseUpdateControllerCallback,
+    expenseSort: expenseSortControllerCallback
   };
 
 }

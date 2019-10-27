@@ -17,11 +17,11 @@ class Show extends React.Component {
             <p>Date: {moment(this.props.result[0].date).format('ll')}</p>
             <p>Amount: {this.props.result[0].amount}</p>
             <p>Message: {this.props.result[0].message}</p>
-            <form action={`/expenses/${this.props.req.params.id}/edit`} method="GET" id="edit">
-              <button class='bx bxs-edit' type="submit" form="edit"></button>
+            <form action={`/expenses/${this.props.req.params.id}/edit`} method="GET">
+              <button class='bx bxs-edit' type="submit"></button>
             </form>
-            <form action={`/expenses/${this.props.req.params.id}?_method=delete`} method="POST" id="delete">
-              <button class="bx bxs-trash" type="submit" form="delete"/>
+            <form action={`/expenses/${this.props.req.params.id}?_method=delete`} method="POST">
+              <button class="bx bxs-trash" type="submit"/>
             </form>
           </div>
         </body>

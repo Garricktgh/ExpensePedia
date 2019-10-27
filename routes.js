@@ -25,13 +25,14 @@ module.exports = (app, allModels) => {
   app.get('/logout', userControllerCallbacks.userLogout);
 
   //expense routes
-  app.get('/', expenseControllerCallbacks.expenseindex);
+  app.get('/', expenseControllerCallbacks.expenseIndex);
   app.get('/expenses/new', expenseControllerCallbacks.expenseNew);
   app.post('/expenses', expenseControllerCallbacks.expenseCreate);
   app.get('/expenses/:id',expenseControllerCallbacks.expenseShow);
   app.get('/expenses/:id/edit', expenseControllerCallbacks.expenseEdit);
   app.put('/expenses/:id', expenseControllerCallbacks.expenseUpdate);
   app.delete('/expenses/:id', expenseControllerCallbacks.expenseDelete);
+  app.post('/', expenseControllerCallbacks.expenseSort)
 
   //statistic routes
   app.get('/statistics/new', statisticControllerCallbacks.statisticNew);

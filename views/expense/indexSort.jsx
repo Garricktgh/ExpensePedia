@@ -5,6 +5,7 @@ const moment = require('moment');
 
 class Index extends React.Component {
   render() {
+    console.log(this.props.result);
     const jumbopic = 'watercolor.jpeg';
 		const jumbo = {
 			backgroundImage: `url(${jumbopic})`,
