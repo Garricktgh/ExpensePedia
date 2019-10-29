@@ -1,3 +1,6 @@
+const multer = require('multer');
+const upload = multer({ dest: './uploads/' });
+
 module.exports = (app, allModels) => {
 
   /*
@@ -32,9 +35,16 @@ module.exports = (app, allModels) => {
   app.get('/expenses/:id/edit', expenseControllerCallbacks.expenseEdit);
   app.put('/expenses/:id', expenseControllerCallbacks.expenseUpdate);
   app.delete('/expenses/:id', expenseControllerCallbacks.expenseDelete);
-  app.post('/', expenseControllerCallbacks.expenseSort)
+  app.post('/', expenseControllerCallbacks.expenseSort),
+  app.post('/receipts/upload', upload.single('myFile'), expenseControllerCallbacks.receiptUpload)
 
   //statistic routes
   app.get('/statistics/new', statisticControllerCallbacks.statisticNew);
   app.post('/statistics/create', statisticControllerCallbacks.statisticCreate);
+
+  // app.post('/', upload.single('myFile'), function(req, res) {
+  //   cloudinary.uploader.upload(req.file.path, function(result) {
+  //     res.send(result);
+  //   });
+  // });
 };

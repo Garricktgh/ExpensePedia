@@ -142,6 +142,25 @@ module.exports = (dbPoolInstance) => {
     });
   };
 
+  let receiptUpload = (v1, v2, callback) => {
+    const queryArray = [parseInt(v1)];
+    const queryString = `SELECT * FROM expenses WHERE user_id = $1 ORDER BY ${v2.sortType} ${v2.sortOrder}`;
+
+    dbPoolInstance.query(queryString, queryArray, (error, queryResult) => {
+      if( error ){
+        // invoke callback function with results after query has executed
+        callback(error, null);
+      }else{
+        // invoke callback function with results after query has executed
+        if( queryResult.rows.length > 0 ){
+          callback(null, queryResult.rows);
+        }else{
+          callback(null, null);
+        }
+      }
+    });
+  };
+
   return {
     expenseIndex,
     expenseCreate,
@@ -149,6 +168,7 @@ module.exports = (dbPoolInstance) => {
     expenseDelete,
     expenseEdit,
     expenseUpdate,
-    expenseSort
+    expenseSort,
+    receiptUpload
   };
 };

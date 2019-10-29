@@ -33,6 +33,12 @@ class New extends React.Component {
               <input type="hidden" name="user_id" defaultValue={this.props.id}/>
               <input class="btn btn-secondary" type="submit" value="Submit"/><br/>
             </form>
+            <br/>
+            <form enctype="multipart/form-data" action="/receipts/upload" method="POST">
+              <p>Receipt</p>
+              <input type="file" name="myFile"/>
+              <input type="submit" class="btn btn-primary"/>
+            </form>
           </div>
         </body>
       </Layout>

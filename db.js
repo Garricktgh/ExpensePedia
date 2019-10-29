@@ -12,6 +12,7 @@
 
 const pg = require('pg');
 const url = require('url');
+const cloudinary = require('cloudinary');
 
 var configs;
 
@@ -37,6 +38,18 @@ if( process.env.DATABASE_URL ){
     port: process.env.port
   };
 }
+
+var configForCloudinary;
+if( process.env.CLOUDINARY_URL ){   //FOR HEROKU
+  configForCloudinary = process.env.CLOUDINARY_URL;
+}else{ // FOR LOCAL
+  configForCloudinary = {
+    "cloud_name": process.env.cloud_name,
+    "api_key": process.env.api_key,
+    "api_secret": process.env.api_secret
+  }
+}
+cloudinary.config(configForCloudinary);
 
 const pool = new pg.Pool(configs);
 

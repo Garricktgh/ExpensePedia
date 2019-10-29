@@ -5,7 +5,6 @@ const moment = require('moment');
 
 class Index extends React.Component {
   render() {
-    console.log(this.props.result);
     const jumbopic = 'watercolor.jpeg';
 		const jumbo = {
 			backgroundImage: `url(${jumbopic})`,
@@ -42,7 +41,7 @@ class Index extends React.Component {
         <body>
           <div class="jumbotron jumbotron-fluid" style={jumbo}>
             <div class="container">
-              <h1 class="display-4 ">Hello <b>{this.props.req.cookies.username}</b></h1>
+              <h1 class="display-4 "><b>Welcome {this.props.req.cookies.username.toUpperCase()}</b></h1>
             </div>
           </div>
           <div class="container">

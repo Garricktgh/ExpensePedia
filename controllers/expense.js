@@ -1,4 +1,5 @@
 const sha256 = require('js-sha256');
+const cloudinary = require('cloudinary');
 const salt = process.env.SALT;
 
 module.exports = (db) => {
@@ -121,6 +122,23 @@ module.exports = (db) => {
     }
   };
 
+  let receiptUploadControllerCallback = (req, res) => {
+    if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
+      cloudinary.uploader.upload(req.file.path, function(result) {
+        db.expense.receiptUpload(req.cookies.user_id, req.body, (err, result) => {
+          data = {
+            req,
+            result
+          };
+          res.render('expense/indexSort', data);
+        });
+        res.send(result);
+      });
+    } else {
+      res.redirect('/login');
+    }
+  };
+
   /**
    * ===========================================
    * Export controller functions as a module
@@ -134,7 +152,7 @@ module.exports = (db) => {
     expenseDelete: expenseDeleteControllerCallback,
     expenseEdit: expenseEditControllerCallback,
     expenseUpdate: expenseUpdateControllerCallback,
-    expenseSort: expenseSortControllerCallback
-  };
-
+    expenseSort: expenseSortControllerCallback,
+    receiptUpload: receiptUploadControllerCallback
+  }
 }

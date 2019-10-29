@@ -12,5 +12,6 @@ CREATE TABLE IF NOT EXISTS expenses (
   category TEXT,
   date TEXT,
   amount FLOAT,
-  message TEXT
+  message TEXT,
+  receipt_img TEXT
 );
