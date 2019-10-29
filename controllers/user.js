@@ -16,14 +16,13 @@ module.exports = (db) => {
   let userCreateControllerCallback = (req, res) => {
     db.user.userCreate(req.body, (err, result) => {
       if (result != null) {
-        console.log(result);
         data = {
           req,
           result
         }
         res.render('users/create', data);
       } else {
-        res.send('username or email taken')
+        res.render('errors/register')
       }
    
     });
@@ -46,7 +45,7 @@ module.exports = (db) => {
           res.redirect('/');
         } 
       } else {
-        res.status(403).send('wrong username or password');
+        res.status(403).render('errors/login');
       }
     });
   };

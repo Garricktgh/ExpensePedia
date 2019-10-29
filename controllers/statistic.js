@@ -33,7 +33,10 @@ module.exports = (db) => {
             res.render('statistics/create', data);
          });
         } else {
-          res.send('no receipts found during time period selected');
+          data = {
+            req
+          }
+          res.render('errors/time-period', data);
         }
       });
     } else {

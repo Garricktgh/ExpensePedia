@@ -5,13 +5,6 @@ const moment = require('moment');
 
 class Index extends React.Component {
   render() {
-    const jumbopic = 'watercolor.jpeg';
-		const jumbo = {
-			backgroundImage: `url(${jumbopic})`,
-			backgroundPosition: 'center',
-			backgroundSize: 'cover',
-			backgroundRepeat: 'repeat'
-		}
     const list = this.props.result.map(expense  => {
       return (
         <tr>
@@ -49,7 +42,7 @@ class Index extends React.Component {
           {this.props.req.cookies.username}
         </Nav>
         <body>
-          <div class="jumbotron jumbotron-fluid" style={jumbo}>
+          <div class="jumbotron jumbotron-fluid">
             <div class="container">
               <h1 class="display-4 "><b>Welcome {this.props.req.cookies.username.toUpperCase()}</b></h1>
             </div>

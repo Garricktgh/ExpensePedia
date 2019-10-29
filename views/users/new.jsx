@@ -21,7 +21,7 @@ class New extends React.Component {
               <input type="text" name="name" required/><br/><br/>
               <p>Email</p>
               <input type="text" name="email" required/><br/><br/>
-              <input class="btn btn-secondary" type="submit" value="create account"/>
+              <input class="btn btn-secondary" type="submit" value="Create"/>
             </form> 
           </div>
         </body>
