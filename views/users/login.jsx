@@ -14,9 +14,9 @@ class New extends React.Component {
           <div className="card text-white bg-dark mb-3">
             <form action="/login" method="POST">
               <p>Username</p>
-              <input type="text" name="username"/><br/><br/>
+              <input type="text" name="username" required/><br/><br/>
               <p>Password</p>
-              <input type="text" name="password"/><br/><br/>
+              <input type="text" name="password" required/><br/><br/>
               <input class="btn btn-secondary" type="submit" value="Login"/>
             </form>
           </div>

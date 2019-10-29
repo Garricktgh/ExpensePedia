@@ -81,6 +81,10 @@ const allStatisticModelsFunction = require('./models/statistic');
 
 const statisticModelsObject = allStatisticModelsFunction( pool );
 
+const allReceiptModelsFunction = require('./models/receipt');
+
+const receiptModelsObject = allReceiptModelsFunction( pool );
+
 /*
  * ===================================================
  * ===================================================
@@ -109,5 +113,6 @@ module.exports = {
   // users: userModelsObject,
   expense: expenseModelsObject,
   user: userModelsObject,
-  statistic: statisticModelsObject
+  statistic: statisticModelsObject,
+  receipt: receiptModelsObject
 };

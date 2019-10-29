@@ -1,5 +1,4 @@
 const sha256 = require('js-sha256');
-const cloudinary = require('cloudinary');
 const salt = process.env.SALT;
 
 module.exports = (db) => {
@@ -18,9 +17,9 @@ module.exports = (db) => {
           result
         }
         if (result != null) {
-        res.render('expense/index', data);
+        res.render('expenses/index', data);
         } else {
-        res.render('expense/new', data);
+        res.render('expenses/new', data);
         }
       });
     } else {
@@ -33,7 +32,7 @@ module.exports = (db) => {
       data = {
         req
       }
-      res.render('expense/new', data);
+      res.render('expenses/new', data);
     } else {
       res.redirect('/login');
     }
@@ -46,7 +45,7 @@ module.exports = (db) => {
           req,
           result
         }
-        res.render('expense/create', data);
+        res.render('expenses/create', data);
       });
     } else {
       res.redirect('/login');
@@ -60,7 +59,7 @@ module.exports = (db) => {
           req,
           result
         }
-        res.render('expense/show', data);
+        res.render('expenses/show', data);
       });
     } else {
       res.redirect('/login');
@@ -73,7 +72,7 @@ module.exports = (db) => {
         data = {
           req
         }
-        res.render('expense/delete', data);
+        res.render('expenses/delete', data);
       });
     } else {
       res.redirect('/login');
@@ -87,7 +86,7 @@ module.exports = (db) => {
           req,
           result
         };
-        res.render('expense/edit', data);
+        res.render('expenses/edit', data);
       });
     } else {
       res.redirect('/login');
@@ -101,7 +100,7 @@ module.exports = (db) => {
           req,
           result
         };
-        res.render('expense/update', data);
+        res.render('expenses/update', data);
       });
     } else {
       res.redirect('/login');
@@ -115,24 +114,7 @@ module.exports = (db) => {
           req,
           result
         };
-        res.render('expense/indexSort', data);
-      });
-    } else {
-      res.redirect('/login');
-    }
-  };
-
-  let receiptUploadControllerCallback = (req, res) => {
-    if (req.cookies.hasLoggedIn === sha256(req.cookies.user_id+salt)){
-      cloudinary.uploader.upload(req.file.path, function(result) {
-        db.expense.receiptUpload(req.cookies.user_id, req.body, (err, result) => {
-          data = {
-            req,
-            result
-          };
-          res.render('expense/indexSort', data);
-        });
-        res.send(result);
+        res.render('expenses/indexSort', data);
       });
     } else {
       res.redirect('/login');
@@ -153,6 +135,5 @@ module.exports = (db) => {
     expenseEdit: expenseEditControllerCallback,
     expenseUpdate: expenseUpdateControllerCallback,
     expenseSort: expenseSortControllerCallback,
-    receiptUpload: receiptUploadControllerCallback
   }
 }

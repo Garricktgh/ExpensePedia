@@ -39,11 +39,21 @@ form {
   margin: 1px;
 }
 
+.cloud-form {
+  display: block;
+}
+
 #chartContainer {
   max-width: 700;
   max-height: 700;
   display: inline-block;
   margin-top: 20px;
+}
+
+img {
+  display: inline-block;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .hidden {

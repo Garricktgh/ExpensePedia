@@ -14,13 +14,13 @@ class New extends React.Component {
           <div className="card text-white bg-dark mb-3">
             <form action="/register" method="POST">
               <p>Username</p>
-              <input type="text" name="username"/><br/><br/>
+              <input type="text" name="username" required/><br/><br/>
               <p>Password</p>
-              <input type="text" name="password"/><br/><br/>
+              <input type="text" name="password" required/><br/><br/>
               <p>Name</p>
-              <input type="text" name="name"/><br/><br/>
+              <input type="text" name="name" required/><br/><br/>
               <p>Email</p>
-              <input type="text" name="email"/><br/><br/>
+              <input type="text" name="email" required/><br/><br/>
               <input class="btn btn-secondary" type="submit" value="create account"/>
             </form> 
           </div>

@@ -20,6 +20,16 @@ class Index extends React.Component {
         <td scope="col" class="sort">{expense.amount}</td>
         <td scope="col">{expense.message.length < 30 ? expense.message : expense.message.substring(0,30)+"..."}</td>
         <td scope="col">
+        {(expense.receipt_img === null) ?
+          <form action={`/receipts/${expense.id}/edit`} method="GET">
+            <button class= 'bx bxs-plus-circle' type="submit"></button>
+          </form> : 
+          <form action={`/expenses/${expense.id}`} method="GET">
+            <button class='bx bxs-receipt' type="submit"></button>
+          </form>
+        }
+        </td>
+        <td scope="col">
           <form action={`/expenses/${expense.id}`} method="GET">
             <button class='bx bxs-show' type="submit"></button>
           </form>
@@ -82,9 +92,10 @@ class Index extends React.Component {
                       <input type="hidden" name="sortType" value="amount"/>
                       <input type="hidden" name="sortOrder" value="desc"/>              
                       <button class='bx bx-down-arrow-alt' type="submit"></button>
-                      </form>
+                    </form>
                   </th>
                   <th scope="col">Message</th>
+                  <th scope="col">Receipt</th>
                 </tr>
               </thead>
               <tbody>

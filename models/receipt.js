@@ -10,9 +10,9 @@ module.exports = (dbPoolInstance) => {
 
   // `dbPoolInstance` is accessible within this function scope
 
-  let statisticByCategory = (values, callback) => {
-    const queryArray = [values.cookies.user_id, values.body.start_date, values.body.end_date];
-    const queryString = 'SELECT category, sum(amount) AS cat_expense FROM expenses WHERE user_id = $1 AND date BETWEEN $2 AND $3 GROUP BY category';
+  let receiptEdit = (values, callback) => {
+    const queryArray = [parseInt(values)];
+    const queryString = 'SELECT * from expenses where ID = $1';
 
     dbPoolInstance.query(queryString, queryArray, (error, queryResult) => {
       if( error ){
@@ -29,9 +29,9 @@ module.exports = (dbPoolInstance) => {
     });
   };
 
-  let statisticTotalExpense = (values, callback) => {
-    const queryArray = [values.cookies.user_id, values.body.start_date, values.body.end_date];
-    const queryString = 'SELECT sum(total_expense.cat_expense) FROM (SELECT category, sum(amount) AS cat_expense FROM expenses WHERE user_id = $1 AND date BETWEEN $2 AND $3 GROUP BY category) AS total_expense';
+  let receiptUpdate = (v1, v2, callback) => {
+    const queryArray = [v1.secure_url, v2];
+    const queryString = 'UPDATE expenses SET receipt_img = $1 where id = $2 RETURNING *';
     dbPoolInstance.query(queryString, queryArray, (error, queryResult) => {
       if( error ){
         // invoke callback function with results after query has executed
@@ -48,7 +48,7 @@ module.exports = (dbPoolInstance) => {
   };
 
   return {
-    statisticByCategory,
-    statisticTotalExpense,
+    receiptEdit,
+    receiptUpdate
   };
 };

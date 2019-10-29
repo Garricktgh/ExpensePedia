@@ -24,11 +24,11 @@ class Edit extends React.Component {
                 <option value="Others">Others</option>
               </select><br/><br/>
               <p>Date</p>
-              <input type="date" name="date" defaultValue={this.props.result[0].date}/><br/><br/>
+              <input type="date" name="date" defaultValue={this.props.result[0].date} required/><br/><br/>
               <p>Amount</p>
-              <input type="text" name="amount" defaultValue={this.props.result[0].amount}/><br/><br/>
+              <input type="text" name="amount" defaultValue={this.props.result[0].amount} required/><br/><br/>
               <p>Message</p>
-              <input type="text" name="message" defaultValue={this.props.result[0].message}/><br/><br/>
+              <input type="text" name="message" defaultValue={this.props.result[0].message} required/><br/><br/>
               <input class="btn btn-secondary" type="submit" value="Submit"/>
             </form>
           </div>
