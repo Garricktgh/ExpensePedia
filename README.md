@@ -39,3 +39,10 @@ Use NodeJS and the following dependencies:
   "react-dom": "^16.10.2",
   "url": "^0.11.0"
   ```
+# Wireframe
+![Wireframe](https://raw.githubusercontent.com/Garricktgh/ExpensePedia/master/documents/Wireframe.png)
+
+# ERD
+![ERD](https://raw.githubusercontent.com/Garricktgh/ExpensePedia/master/documents/ERD.png)
+
+
