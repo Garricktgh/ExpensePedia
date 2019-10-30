@@ -39,10 +39,16 @@ Use NodeJS and the following dependencies:
   "react-dom": "^16.10.2",
   "url": "^0.11.0"
   ```
+# Link
+https://expensepedia.herokuapp.com/login
+  
 # Wireframe
 ![Wireframe](https://raw.githubusercontent.com/Garricktgh/ExpensePedia/master/documents/Wireframe.png)
 
 # ERD
 ![ERD](https://raw.githubusercontent.com/Garricktgh/ExpensePedia/master/documents/ERD.png)
+
+# User Stories
+Tracking my spending allows me to see where my money is really going. It is essential if I want to understand my financial habits and make changes to them. It can help me realize when I need to stop spending, so I do not end up with a financial hangover.
 
 
