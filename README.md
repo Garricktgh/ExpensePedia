@@ -9,6 +9,7 @@ ExpensePedia is an expense tracker that provides statistics of expediture.
   React
   Postgres
   Bootstrap 4
+  Heroku
   ```
 
 # Approach
