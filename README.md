@@ -1,5 +1,5 @@
 # ExpensePedia
-ExpensePedia is an expense tracker that provides statistics of expediture.
+ExpensePedia is an expense tracker that provides statistics of expenditure.
 
 # Technologies Used
   ```
